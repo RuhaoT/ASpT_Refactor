@@ -3,7 +3,8 @@ LIBDIR:=../$(LIBDIR)
 NRMCL=$(LIBDIR)/$(LIBNAME)
 LDFLAGS=$(NRMCL) -qopenmp $(LDOPTIONS)
 
-CFLAGS = $(COPTIONS) $(OPTFLAGS) $(CINCLUDES) -O3 -parallel -dynamic -qopenmp -Ofast -xMIC-AVX512 -simd -vec -qopt-prefetch=5  -qopt-prefetch-distance=0,4  
+#Please add -xMIC-AVX512 to CFLAGS if the cpu support AVX512ER and AVX512PF
+CFLAGS = $(COPTIONS) $(OPTFLAGS) $(CINCLUDES) -O3 -parallel -dynamic -qopenmp -Ofast  -simd -vec -qopt-prefetch=5  -qopt-prefetch-distance=0,4  
 CFLAGS += -I$(LIBDIR) -L.
 
 SOURCES=$(wildcard *.cc)

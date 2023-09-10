@@ -672,8 +672,8 @@ void gen()
 
 void mprocess()
 {
-	FILE *fpo = fopen("SpMM_KNL_SP.out", "a");
-	FILE *fpo2 = fopen("SpMM_KNL_SP_preprocessing.out", "a");
+	FILE *fpo = fopen("SpMM_KNL_DP.out", "a");
+	FILE *fpo2 = fopen("SpMM_KNL_DP_preprocessing.out", "a");
 
 	double elapsed[3];
 	FTYPE *vin, *vout;
