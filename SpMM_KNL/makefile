@@ -6,6 +6,7 @@ LDFLAGS=$(NRMCL) -qopenmp $(LDOPTIONS)
 #Please add -xMIC-AVX512 to CFLAGS if the cpu support AVX512ER and AVX512PF
 CFLAGS = $(COPTIONS) $(OPTFLAGS) $(CINCLUDES) -O3 -parallel -dynamic -qopenmp -Ofast  -simd -vec -qopt-prefetch=5  -qopt-prefetch-distance=0,4  
 CFLAGS += -I$(LIBDIR) -L.
+# CFLAGS += -xMIC-AVX512
 
 SOURCES=$(wildcard *.cc)
 OBJS=$(shell echo $(SOURCES) | sed s/.cc/.o/g)

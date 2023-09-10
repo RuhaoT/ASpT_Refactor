@@ -42,11 +42,11 @@ struct v_struct {
 double vari;
 struct v_struct *temp_v, *gold_temp_v;
 int sc, nr, nc, ne, gold_ne, npanel, mne, mne_nr;
-int nr0;
+int original_number_row;
 
 int *csr_v;
-int *csr_e;
-FTYPE *csr_ev;
+int *ASpT_csr_column_index;
+FTYPE *ASpT_csr_values;
 FTYPE *ocsr_ev;
 
 //int *mcsr_v;
@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 
         //get the number of rows, columns, and non-zero elements
         fscanf(fp, "%d %d %d", &nr, &nc, &ne);
-        nr0 = nr;
+        original_number_row = nr;
         //ne *= (sflag+1);
         //nr = CEIL(nr,BH)*BH;
 	//npanel = CEIL(nr,BH);
